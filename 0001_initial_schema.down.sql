@@ -1,5 +1,9 @@
 BEGIN
 
-    CREATE TABLE 
+    DROP TABLE IF EXISTS Clothes
 
-END;
+    DROP TABLE IF EXISTS Outfits
+
+    COMMIT;
+
+END
