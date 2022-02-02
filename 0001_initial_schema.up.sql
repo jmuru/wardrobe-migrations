@@ -8,7 +8,7 @@ BEGIN
         created_at TIMESTAMP,
         created_by BIGINT UNIQUE NOT NULL,
         brand VARCHAR,
-        FOREIGN key (created_by) REFERENCES Users(id),
+        FOREIGN KEY (created_by) REFERENCES Users(id),
     )
 
     CREATE TABLE Outfits (
