@@ -2,7 +2,7 @@
 BEGIN
 
     CREATE TABLE Clothes (
-        id serial PRIMARY KEY,
+        id SERIAL PRIMARY KEY,
         asset_url VARCHAR ( 50 ) UNIQUE NOT NULL,
         category VARCHAR NOT NULL,
         created_at TIMESTAMP,
@@ -12,12 +12,13 @@ BEGIN
     )
 
     CREATE TABLE Outfits (
-        outfit_id serial PRIMARY KEY,
+        id SERIAL PRIMARY KEY
+        outfit_id INT NOT NULL,
         created_by BIGINT UNIQUE NOT NULL,
         created_at TIMESTAMP,
         last_modified TIMESTAMP,
         item_id BIGINT UNIQUE NOT NULL,
-        FOREIGN KEY (created_by) REFERENCES Users(id),
+        FOREIGN KEY (created_by) REFERENCES Users(uuid),
         FOREIGN KEY (item_id) REFERENCES Clothes(id),
     )
 
