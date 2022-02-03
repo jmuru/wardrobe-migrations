@@ -18,7 +18,7 @@ BEGIN
         created_at TIMESTAMP,
         last_modified TIMESTAMP,
         item_id BIGINT UNIQUE NOT NULL,
-        FOREIGN KEY (created_by) REFERENCES Users(uuid),
+        FOREIGN KEY (created_by) REFERENCES Users(id),
         FOREIGN KEY (item_id) REFERENCES Clothes(id),
     )
 
