@@ -4,6 +4,5 @@ BEGIN
 
     DROP TABLE IF EXISTS Outfits
 
-    COMMIT;
 
 END

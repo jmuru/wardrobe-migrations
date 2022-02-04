@@ -1,9 +1,8 @@
-
 BEGIN
 
     CREATE TABLE Clothes (
         id SERIAL PRIMARY KEY,
-        asset_url VARCHAR ( 50 ) UNIQUE NOT NULL,
+        asset_url VARCHAR UNIQUE NOT NULL,
         category VARCHAR NOT NULL,
         created_at TIMESTAMP,
         created_by BIGINT UNIQUE NOT NULL,
@@ -22,6 +21,5 @@ BEGIN
         FOREIGN KEY (item_id) REFERENCES Clothes(id),
     )
 
-COMMIT
 
 END;
