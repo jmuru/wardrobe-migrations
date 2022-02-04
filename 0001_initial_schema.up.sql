@@ -1,18 +1,21 @@
+BEGIN
+
 CREATE TABLE Users (
-  id INT NOT NULL UNIQUE,
-  username CHAR(100),
+  id SERIAL UNIQUE NOT NULL,
+  username VARCHAR NOT NULL UNIQUE,
   password_hash BINARY(64) NOT NULL,
-  first_name CHAR(100),
-  location_city CHAR(100),
-  location_state CHAR(100),
+  first_name VARCHAR,
+  last_name VARCHAR,
+  location_city VARCHAR,
+  location_state VARCHAR,
   is_curator BOOLEAN,
-  email CHAR(100),
-  instagram CHAR(100),
-  facebook CHAR(100),
-  tiktok CHAR(100),
-  whatsapp CHAR(100),
-  twitter CHAR(100),
-  pinterest CHAR(100),
+  email VARCHAR NOT NULL UNIQUE,
+  instagram VARCHAR,
+  facebook VARCHAR,
+  tiktok VARCHAR,
+  whatsapp VARCHAR,
+  twitter VARCHAR,
+  pinterest VARCHAR,
   last_login TIMESTAMP,
   registered_at TIMESTAMP,
   closet_id INT,
@@ -20,7 +23,7 @@ CREATE TABLE Users (
 );
 
 CREATE TABLE Closets (
-  id INT NOT NULL UNIQUE,
+  id SERIAL UNIQUE NOT NULL,
   is_character BOOLEAN,
   last_modified TIMESTAMP,
   created_at TIMESTAMP
@@ -28,3 +31,5 @@ CREATE TABLE Closets (
   PRIMARY KEY (id),
   FOREIGN KEY (closet_owner) REFERENCES Users(id),
 );
+
+END
