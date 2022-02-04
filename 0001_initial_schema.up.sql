@@ -1,7 +1,7 @@
 BEGIN
 
 CREATE TABLE Users (
-  id SERIAL UNIQUE NOT NULL,
+  id SERIAL PRIMARY KEY NOT NULL,
   username VARCHAR NOT NULL UNIQUE,
   password_hash BINARY(64) NOT NULL,
   first_name VARCHAR,
@@ -19,16 +19,14 @@ CREATE TABLE Users (
   last_login TIMESTAMP,
   registered_at TIMESTAMP,
   closet_id INT,
-  PRIMARY KEY (id),
 );
 
 CREATE TABLE Closets (
-  id SERIAL UNIQUE NOT NULL,
+  id SERIAL PRIMARY KEY NOT NULL,
   is_character BOOLEAN,
   last_modified TIMESTAMP,
   created_at TIMESTAMP
   outfit_id INT,
-  PRIMARY KEY (id),
   FOREIGN KEY (closet_owner) REFERENCES Users(id),
 );
 
