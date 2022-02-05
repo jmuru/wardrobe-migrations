@@ -2,7 +2,10 @@ BEGIN
 
     DROP TABLE IF EXISTS Clothes
 
+    DROP TABLE IF EXISTS Users
+
+    DROP TABLE IF EXISTS Closets
+
     DROP TABLE IF EXISTS Outfits
 
-
-END
+END;
