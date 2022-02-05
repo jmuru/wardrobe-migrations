@@ -1,5 +1,7 @@
 BEGIN
 
-    CREATE TABLE 
+    DROP TABLE IF EXISTS Users
+
+    DROP TABLE IF EXISTS Closets
 
 END;
