@@ -1,6 +1,6 @@
 BEGIN
 
-    CREATE TABLE Clothes (
+    CREATE TABLE [IF NOT EXISTS] Clothes (
         id SERIAL PRIMARY KEY,
         asset_url VARCHAR UNIQUE NOT NULL,
         category VARCHAR NOT NULL,
@@ -10,7 +10,7 @@ BEGIN
         FOREIGN KEY (created_by) REFERENCES Users(id),
     )
 
-    CREATE TABLE Outfits (
+    CREATE TABLE [IF NOT EXISTS] Outfits (
         id SERIAL PRIMARY KEY
         outfit_id INT NOT NULL,
         created_by BIGINT UNIQUE NOT NULL,
@@ -22,7 +22,7 @@ BEGIN
     )
 
 
-    CREATE TABLE Users (
+    CREATE TABLE [IF NOT EXISTS] Users (
         id SERIAL PRIMARY KEY NOT NULL,
         username VARCHAR NOT NULL UNIQUE,
         password_hash BINARY(64) NOT NULL,
@@ -43,7 +43,7 @@ BEGIN
         closet_id INT,
     )
 
-    CREATE TABLE Closets (
+    CREATE TABLE [IF NOT EXISTS] Closets (
         id SERIAL PRIMARY KEY NOT NULL,
         is_character BOOLEAN,
         last_modified TIMESTAMP,
